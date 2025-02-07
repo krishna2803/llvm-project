@@ -14,7 +14,7 @@
 namespace LIBC_NAMESPACE_DECL {
 
 LLVM_LIBC_FUNCTION(int, countlsur, (unsigned fract f)) {
-  return fixed_point::countls(f);
+  return fixed_point.countls(f);
 }
 
 } // namespace LIBC_NAMESPACE_DECL

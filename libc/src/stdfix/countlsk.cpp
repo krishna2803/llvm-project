@@ -13,6 +13,6 @@
 
 namespace LIBC_NAMESPACE_DECL {
 
-LLVM_LIBC_FUNCTION(int, countlsk, (accum f)) { return fixed_point::countls(f); }
+LLVM_LIBC_FUNCTION(int, countlsk, (accum f)) { return fixed_point.countls(f); }
 
 } // namespace LIBC_NAMESPACE_DECL
