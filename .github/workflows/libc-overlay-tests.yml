@@ -5,7 +5,7 @@ permissions:
 on:
   workflow_dispatch:
   pull_request:
-    branches: ["main"]
+    branches: ["main", "gh-actions-test-branch"]
     paths:
       - "libc/**"
       - ".github/workflows/libc-overlay-tests.yml"
