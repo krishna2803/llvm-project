@@ -1,4 +1,4 @@
-//===-- Implementation of sched_setcpuzero --------------------------------===//
+//===-- Implementation header for sched_setcpuset ---------------*- C++ -*-===//
 //
 // Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
 // See https://llvm.org/LICENSE.txt for license information.
@@ -6,19 +6,19 @@
 //
 //===----------------------------------------------------------------------===//
 
-#include "src/sched/sched_setcpuzero.h"
+#ifndef LLVM_LIBC_SRC_SCHED_SCHED_SETCPUSET_H
+#define LLVM_LIBC_SRC_SCHED_SCHED_SETCPUSET_H
 
-#include "src/__support/common.h"        // LLVM_LIBC_FUNCTION
-#include "src/__support/macros/config.h" // LIBC_NAMESPACE_DECL
+#include "src/__support/macros/config.h"
 
 #include "hdr/types/cpu_set_t.h"
 #include "hdr/types/size_t.h"
 
 namespace LIBC_NAMESPACE_DECL {
 
-LLVM_LIBC_FUNCTION(void, __sched_setcpuzero,
-                   (const size_t cpuset_size, cpu_set_t *set)) {
-  __builtin_memset(set, 0, cpuset_size);
-}
+// for internal use in the CPU_SET macro
+void __sched_setcpuset(int cpu, const size_t cpuset_size, cpu_set_t *set);
 
 } // namespace LIBC_NAMESPACE_DECL
+
+#endif // LLVM_LIBC_SRC_SCHED_SCHED_SETCPUSET_H
