@@ -106,7 +106,7 @@ endforeach()
 
 
 foreach(suffix IN ITEMS r lr k lk ur ulr uk ulk)
-add_libc_test(
+  add_libc_test(
     idiv${suffix}_test
     SUITE
       libc-stdfix-tests
