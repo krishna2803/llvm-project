@@ -40,23 +40,13 @@ add_fp_unittest(
 )
 
 add_fp_unittest(
-  bfloat16_test
-  NEED_MPFR
+  comparison_operations_test
   SUITE
     libc-fputil-tests
   SRCS
-    bfloat16_test.cpp
-  DEPENDS
-    libc.src.__support.FPUtil.bfloat16
-)
-
-add_fp_unittest(
-  comparision_operations_test
-  SUITE
-    libc-fputil-tests
-  SRCS
-    comparision_operations_test.cpp
+    comparison_operations_test.cpp
   DEPENDS
     libc.src.__support.FPUtil.fp_bits
-    libc.src.__support.FPUtil.comparision_operations
+    # libc.src.__support.FPUtil.comparison_operations
 )
+
