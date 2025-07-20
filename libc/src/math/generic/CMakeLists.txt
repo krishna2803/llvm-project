@@ -5009,3 +5009,45 @@ add_entrypoint_object(
     libc.src.__support.macros.config
     libc.src.__support.macros.properties.types
 )
+
+add_entrypoint_object(
+  bf16addf
+  SRCS
+    bf16addf.cpp
+  HDRS
+    ../bf16addf.h
+  DEPENDS
+    libc.src.__support.common
+    libc.src.__support.FPUtil.bfloat16
+    libc.src.__support.FPUtil.generic.add_sub
+    libc.src.__support.macros.config
+    libc.src.__support.macros.properties.types
+)
+
+add_entrypoint_object(
+  bf16addl
+  SRCS
+    bf16addl.cpp
+  HDRS
+    ../bf16addl.h
+  DEPENDS
+    libc.src.__support.common
+    libc.src.__support.FPUtil.bfloat16
+    libc.src.__support.FPUtil.generic.add_sub
+    libc.src.__support.macros.config
+    libc.src.__support.macros.properties.types
+)
+
+add_entrypoint_object(
+  bf16addf128
+  SRCS
+    bf16addf128.cpp
+  HDRS
+    ../bf16addf128.h
+  DEPENDS
+    libc.src.__support.common
+    libc.src.__support.FPUtil.bfloat16
+    libc.src.__support.FPUtil.generic.add_sub
+    libc.src.__support.macros.config
+    libc.src.__support.macros.properties.types
+)
