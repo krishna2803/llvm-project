@@ -567,3 +567,8 @@ add_math_entrypoint_object(bf16div)
 add_math_entrypoint_object(bf16divf)
 add_math_entrypoint_object(bf16divl)
 add_math_entrypoint_object(bf16divf128)
+
+add_math_entrypoint_object(bf16mul)
+add_math_entrypoint_object(bf16mulf)
+add_math_entrypoint_object(bf16mull)
+add_math_entrypoint_object(bf16mulf128)
