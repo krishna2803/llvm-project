@@ -8,9 +8,9 @@
 
 #include "src/math/bf16fmaf.h"
 
-#include "src/__support/common.h"
-#include "src/__support/FPUtil/bfloat16.h"
 #include "src/__support/FPUtil/FMA.h"
+#include "src/__support/FPUtil/bfloat16.h"
+#include "src/__support/common.h"
 #include "src/__support/macros/config.h"
 
 namespace LIBC_NAMESPACE_DECL {
