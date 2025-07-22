@@ -8,6 +8,7 @@ on:
     paths:
       - 'libc/**'
       - '.github/workflows/libc-fullbuild-tests.yml'
+  workflow_dispatch:
 
 jobs:
   build:
