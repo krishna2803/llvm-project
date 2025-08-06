@@ -897,6 +897,7 @@ endif()
 list(APPEND TARGET_LIBM_ENTRYPOINTS
   # bfloat16 entrypoints
   libc.src.math.fabsbf16
+  libc.src.math.sqrtbf16
 )
 
 if(LIBC_COMPILER_HAS_FIXED_POINT)

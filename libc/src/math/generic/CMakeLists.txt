@@ -2923,6 +2923,18 @@ add_entrypoint_object(
     libc.src.__support.macros.optimization
     libc.src.__support.macros.properties.types
     libc.src.__support.FPUtil.sqrt
+)
+
+add_entrypoint_object(
+  sqrtbf16
+  SRCS
+    sqrtbf16.cpp
+  HDRS
+    ../sqrtbf16.h
+  DEPENDS
+    libc.src.__support.FPUtil.bfloat16
+    libc.src.__support.FPUtil.sqrt
+    libc.src.__support.macros.config
   )
 
 add_entrypoint_object(
