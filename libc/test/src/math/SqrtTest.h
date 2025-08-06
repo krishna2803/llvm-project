@@ -35,14 +35,19 @@ public:
     constexpr StorageType COUNT = 200'001;
     constexpr StorageType STEP = HIDDEN_BIT / COUNT;
     for (StorageType i = 0, v = 0; i <= COUNT; ++i, v += STEP) {
-      InType x = FPBits(i).get_val();
+      InType x = FPBits(v).get_val();
       ASSERT_MPFR_MATCH_ALL_ROUNDING(mpfr::Operation::Sqrt, x, func(x), 0.5);
     }
   }
 
   void test_normal_range(SqrtFunc func) {
-    constexpr StorageType COUNT = 200'001;
-    constexpr StorageType STEP = STORAGE_MAX / COUNT;
+    // FIXME: infinite loop when compilation
+    // ninja libc.test.src.math.sqrtbf16_test.__unit__
+    constexpr StorageType COUNT = (static_cast<int>(STORAGE_MAX) < 200'001)
+                                      ? STORAGE_MAX
+                                      : static_cast<StorageType>(200'001);
+    constexpr StorageType STEP =
+        static_cast<StorageType>(200'001 / static_cast<int>(COUNT));
     for (StorageType i = 0, v = 0; i <= COUNT; ++i, v += STEP) {
       FPBits x_bits(v);
       InType x = x_bits.get_val();
